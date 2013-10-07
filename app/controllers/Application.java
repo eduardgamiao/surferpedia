@@ -7,6 +7,7 @@ import views.html.Page1;
 import views.html.mho;
 import views.html.mmanuel;
 import views.html.dblanchard;
+import views.html.joyce;
 
 /**
  * Implements the controllers for this application.
@@ -54,6 +55,15 @@ public class Application extends Controller {
    */
   public static Result dblanchard() {
     return ok(dblanchard.render("Welcome to Dorian Blanchard."));
+    
+  }
+  
+  /**
+   * Returns joyce, a page about Joyce Hoffman.
+   * @return The joyce.
+   */
+  public static Result joyce() {
+    return ok(joyce.render("Welcome to Dorian Blanchard."));
     
   }
 }

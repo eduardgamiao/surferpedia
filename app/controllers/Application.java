@@ -8,6 +8,7 @@ import views.html.mho;
 import views.html.mmanuel;
 import views.html.dblanchard;
 import views.html.joyce;
+import views.html.KeliaMoniz;
 
 /**
  * Implements the controllers for this application.
@@ -64,6 +65,15 @@ public class Application extends Controller {
    */
   public static Result joyce() {
     return ok(joyce.render("Welcome to Dorian Blanchard."));
+    
+  }
+  
+  /**
+   * Returns Kelia, a page about Kelia Moniz.
+   * @return The Kelia.
+   */
+  public static Result kelia() {
+    return ok(KeliaMoniz.render("Welcome to Dorian Blanchard."));
     
   }
 }

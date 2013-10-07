@@ -34,10 +34,24 @@
   height: 500px;
 }
 
+.carousel-5 {
+  background: url("../images/KeliaMoniz.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+}
+
 .joyce-img2 {
   background: url('../images/Joyce_Hoffman.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 500px;
+}
+
+.keliamoniz {
+  background: url("../images/KeliaMoniz.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
 }

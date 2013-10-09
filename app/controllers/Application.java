@@ -1,6 +1,7 @@
 package controllers;
 
 import play.mvc.Controller;
+
 import play.mvc.Result;
 import views.html.Index;
 import views.html.Page1;
@@ -9,6 +10,7 @@ import views.html.mmanuel;
 import views.html.dblanchard;
 import views.html.joyce;
 import views.html.KeliaMoniz;
+import views.html.kolohe;
 
 /**
  * Implements the controllers for this application.
@@ -74,6 +76,15 @@ public class Application extends Controller {
    */
   public static Result kelia() {
     return ok(KeliaMoniz.render("Welcome to Dorian Blanchard."));
+    
+  }
+  
+  /**
+   * Returns Kelia, a page about Kelia Moniz.
+   * @return The Kelia.
+   */
+  public static Result kolohe() {
+    return ok(kolohe.render("Welcome to Dorian Blanchard."));
     
   }
 }

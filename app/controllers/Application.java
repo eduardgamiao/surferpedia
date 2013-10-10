@@ -5,7 +5,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.Index;
 import views.html.Page1;
-import views.html.mho;
+import views.html.Mho;
 import views.html.mmanuel;
 import views.html.dblanchard;
 import views.html.joyce;
@@ -39,7 +39,7 @@ public class Application extends Controller {
    * @return The mho.
    */
   public static Result mho() {
-    return ok(mho.render("Welcome to Micheal Ho."));
+    return ok(Mho.render("Welcome to Micheal Ho."));
     
   }
   

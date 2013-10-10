@@ -5,28 +5,28 @@
 	background-repeat: none;
 }
 
-.carousel-1 {
+.ho {
 	background-image:url('../images/ho.jpg');
 	background-size: cover;
 	background-position: center;
 	height: 400px;
 }
 
-.carousel-2 {
+.malia {
   background-image:url('../images/malia.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
 }
 
-.carousel-3 {
+.devault {
   background-image:url('../images/devault.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
 }
 
-.carousel-4 {
+.joyce {
   background: url('../images/Joyce_Hoffman.jpg');
   background-size: cover;
   background-position: center;
@@ -34,7 +34,7 @@
   height: 400px;
 }
 
-.carousel-5 {
+.kelia {
   background: url("../images/KeliaMoniz.jpg");
   background-size: cover;
   background-position: center;
@@ -46,13 +46,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
-}
-
-.keliamoniz {
-  background: url("../images/KeliaMoniz.jpg");
-  background-size: cover;
-  background-position: center;
   height: 400px;
 }
 

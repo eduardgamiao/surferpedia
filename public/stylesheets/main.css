@@ -1,57 +1,57 @@
 .header {
-	background-image:url('../images/header.jpg');
+	background-image: url('../images/header.jpg');
 	height: 200px;
 	background-size: cover;
 	background-repeat: none;
 }
 
 .ho {
-	background-image:url('../images/ho.jpg');
+	background-image: url('../images/ho.jpg');
 	background-size: cover;
 	background-position: center;
 	height: 400px;
 }
 
 .malia {
-  background-image:url('../images/malia.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+	background-image: url('../images/malia.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 400px;
 }
 
 .devault {
-  background-image:url('../images/devault.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+	background-image: url('../images/devault.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 400px;
 }
 
 .joyce {
-  background: url('../images/Joyce_Hoffman.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
+	background: url('../images/Joyce_Hoffman.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
 }
 
 .kelia {
-  background: url("../images/KeliaMoniz.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+	background: url("../images/KeliaMoniz.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 400px;
 }
 
 .joyce-img2 {
-  background: url('../images/Joyce_Hoffman.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
+	background: url('../images/Joyce_Hoffman.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
 }
 
 .kolohe-andino {
-  background: url("../images/KoloheAndino_02.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+	background: url("../images/KoloheAndino_02.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 400px;
 }

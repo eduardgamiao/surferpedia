@@ -4,13 +4,12 @@ import play.mvc.Controller;
 
 import play.mvc.Result;
 import views.html.Index;
-import views.html.Page1;
-import views.html.Mho;
-import views.html.mmanuel;
-import views.html.dblanchard;
-import views.html.joyce;
+import views.html.Ho;
+import views.html.Manuel;
+import views.html.Devault;
+import views.html.Joyce;
 import views.html.KeliaMoniz;
-import views.html.kolohe;
+import views.html.Kolohe;
 
 /**
  * Implements the controllers for this application.
@@ -26,47 +25,38 @@ public class Application extends Controller {
   }
   
   /**
-   * Returns page1, a simple example of a second page to illustrate navigation.
-   * @return The Page1.
+   * Returns Ho, a page about Michael Ho.
+   * @return The Ho.
    */
-  public static Result page1() {
-    return ok(Page1.render("Welcome to Page1."));
+  public static Result ho() {
+    return ok(Ho.render("Welcome to Michael Ho."));
     
   }
   
   /**
-   * Returns mho, a page about Micheal Ho.
-   * @return The mho.
+   * Returns Manuel, a page about Malia Manuel.
+   * @return The Manuel.
    */
-  public static Result mho() {
-    return ok(Mho.render("Welcome to Micheal Ho."));
+  public static Result manuel() {
+    return ok(Manuel.render("Welcome to Malia Manuel."));
     
   }
   
   /**
-   * Returns mmanuel, a page about Malia Manuel.
-   * @return The mmanuel.
+   * Returns Devault, a page about Imaikalnai DeVault.
+   * @return The Devault.
    */
-  public static Result mmanuel() {
-    return ok(mmanuel.render("Welcome to Malia Manuel."));
+  public static Result devault() {
+    return ok(Devault.render("Welcome to Dorian Blanchard."));
     
   }
   
   /**
-   * Returns dblanchard, a page about Dorian Blanchard.
-   * @return The dblanchard.
-   */
-  public static Result dblanchard() {
-    return ok(dblanchard.render("Welcome to Dorian Blanchard."));
-    
-  }
-  
-  /**
-   * Returns joyce, a page about Joyce Hoffman.
-   * @return The joyce.
+   * Returns Joyce, a page about Joyce Hoffman.
+   * @return The Joyce.
    */
   public static Result joyce() {
-    return ok(joyce.render("Welcome to Dorian Blanchard."));
+    return ok(Joyce.render("Welcome to Dorian Blanchard."));
     
   }
   
@@ -75,16 +65,16 @@ public class Application extends Controller {
    * @return The Kelia.
    */
   public static Result kelia() {
-    return ok(KeliaMoniz.render("Welcome to Dorian Blanchard."));
+    return ok(KeliaMoniz.render("Welcome to Kelia Moniz."));
     
   }
   
   /**
-   * Returns Kelia, a page about Kelia Moniz.
-   * @return The Kelia.
+   * Returns Kolohe, a page about Kolohe.
+   * @return The Kolohe.
    */
   public static Result kolohe() {
-    return ok(kolohe.render("Welcome to Dorian Blanchard."));
+    return ok(Kolohe.render("Welcome to Kolohe."));
     
   }
 }

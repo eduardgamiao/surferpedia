@@ -4,10 +4,9 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /page1                      controllers.Application.page1()
-GET     /mho                        controllers.Application.mho()
-GET     /mmanuel                        controllers.Application.mmanuel()
-GET     /dblanchard                        controllers.Application.dblanchard()
+GET     /ho                        controllers.Application.ho()
+GET     /manuel                        controllers.Application.manuel()
+GET     /devault                        controllers.Application.devault()
 GET     /joyce                      controllers.Application.joyce()
 GET     /kelia                      controllers.Application.kelia()
 GET     /kolohe                      controllers.Application.kolohe()

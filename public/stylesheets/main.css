@@ -20,25 +20,25 @@
 }
 
 .carousel-3 {
-  background-image:url('../images/groms.jpg');
+  background-image:url('../images/devault.jpg');
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 400px;
 }
 
 .carousel-4 {
   background: url('../images/Joyce_Hoffman.jpg');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 400px;
 }
 
 .carousel-5 {
   background: url("../images/KeliaMoniz.jpg");
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 400px;
 }
 
 .joyce-img2 {
@@ -46,7 +46,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 400px;
 }
 
 .keliamoniz {

@@ -15,4 +15,4 @@ Use navbar to navigate the different pages.
 
 Credits
 
-Everyone?
+Eduard Gamiao and ICS314 Fall 2013 class.

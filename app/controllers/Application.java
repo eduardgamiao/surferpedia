@@ -21,12 +21,12 @@ public class Application extends Controller {
    * @return The resulting home page. 
    */
   public static Result index() {
-    return ok(Index.render("Welcome to the homepage"));
+    return ok(Index.render());
   }
   
   /**
-   * Returns Ho, a page about Michael Ho.
-   * @return The Ho.
+   * Returns the Michael Ho page.
+   * @return The Michael Ho webpage.
    */
   public static Result ho() {
     return ok(Ho.render());
@@ -34,8 +34,8 @@ public class Application extends Controller {
   }
   
   /**
-   * Returns Manuel, a page about Malia Manuel.
-   * @return The Manuel.
+   * Returns a page about Malia Manuel.
+   * @return The Malia Manuel webpage.
    */
   public static Result manuel() {
     return ok(Manuel.render());
@@ -43,8 +43,8 @@ public class Application extends Controller {
   }
   
   /**
-   * Returns Devault, a page about Imaikalnai DeVault.
-   * @return The Devault.
+   * Returns a page about Imaikalnai DeVault.
+   * @return The Imaikalani Devault webpage.
    */
   public static Result devault() {
     return ok(Devault.render());
@@ -52,8 +52,8 @@ public class Application extends Controller {
   }
   
   /**
-   * Returns Joyce, a page about Joyce Hoffman.
-   * @return The Joyce.
+   * Returns a page about Joyce Hoffman.
+   * @return The Joyce Hoffman webpage.
    */
   public static Result joyce() {
     return ok(Joyce.render());
@@ -61,8 +61,8 @@ public class Application extends Controller {
   }
   
   /**
-   * Returns Kelia, a page about Kelia Moniz.
-   * @return The Kelia.
+   * Returns a page about Kelia Moniz.
+   * @return The Kelia Moniz webpage.
    */
   public static Result kelia() {
     return ok(KeliaMoniz.render());
@@ -70,8 +70,8 @@ public class Application extends Controller {
   }
   
   /**
-   * Returns Kolohe, a page about Kolohe.
-   * @return The Kolohe.
+   * Returns a page about Kolohe Anidino..
+   * @return The Kolohe Anidino webpage.
    */
   public static Result kolohe() {
     return ok(Kolohe.render());

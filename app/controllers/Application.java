@@ -21,7 +21,7 @@ public class Application extends Controller {
    * @return The resulting home page. 
    */
   public static Result index() {
-    return ok(Index.render("Welcome to the home page."));
+    return ok(Index.render("Welcome to the homepage"));
   }
   
   /**
@@ -29,7 +29,7 @@ public class Application extends Controller {
    * @return The Ho.
    */
   public static Result ho() {
-    return ok(Ho.render("Welcome to Michael Ho."));
+    return ok(Ho.render());
     
   }
   
@@ -38,7 +38,7 @@ public class Application extends Controller {
    * @return The Manuel.
    */
   public static Result manuel() {
-    return ok(Manuel.render("Welcome to Malia Manuel."));
+    return ok(Manuel.render());
     
   }
   
@@ -47,7 +47,7 @@ public class Application extends Controller {
    * @return The Devault.
    */
   public static Result devault() {
-    return ok(Devault.render("Welcome to Dorian Blanchard."));
+    return ok(Devault.render());
     
   }
   
@@ -56,7 +56,7 @@ public class Application extends Controller {
    * @return The Joyce.
    */
   public static Result joyce() {
-    return ok(Joyce.render("Welcome to Dorian Blanchard."));
+    return ok(Joyce.render());
     
   }
   
@@ -65,7 +65,7 @@ public class Application extends Controller {
    * @return The Kelia.
    */
   public static Result kelia() {
-    return ok(KeliaMoniz.render("Welcome to Kelia Moniz."));
+    return ok(KeliaMoniz.render());
     
   }
   
@@ -74,7 +74,7 @@ public class Application extends Controller {
    * @return The Kolohe.
    */
   public static Result kolohe() {
-    return ok(Kolohe.render("Welcome to Kolohe."));
+    return ok(Kolohe.render());
     
   }
 }

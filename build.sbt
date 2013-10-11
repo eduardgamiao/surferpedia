@@ -1,4 +1,4 @@
-name := "surferpedia"
+name := "Surferpedia"
 
 version := "1.0-SNAPSHOT"
 

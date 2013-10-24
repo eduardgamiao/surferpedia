@@ -1,7 +1,6 @@
 import models.SurferDB;
 import play.Application;
 import play.GlobalSettings;
-import play.Logger;
 import views.formdata.SurferFormData;
 
 /**

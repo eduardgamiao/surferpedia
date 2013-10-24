@@ -38,10 +38,8 @@
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Males<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu">
-      @for(Surfer <- surfers) {
-      
-      <li><a href="/@Surfer.getName">@Surfer.getName</a></li>
-      }
+              @for(Surfer <- surfers) {
+              <li><a href="/surfer/@Surfer.getSlug">@Surfer.getName</a></li> }
             </ul>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Females<b
               class="caret"></b></a>
@@ -50,6 +48,7 @@
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Groms<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu">
             </ul></li>
+            <li><a href="/new">New</a></li>
         </ul>
       </div>
     </div>

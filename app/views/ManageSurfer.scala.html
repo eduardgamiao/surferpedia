@@ -1,0 +1,65 @@
+@(surferForm: Form[views.formdata.SurferFormData],
+  typeMap: Map[String, Boolean])
+
+@import helper._
+@import bootstrap3._
+
+@Main("Manage Surfer", SurferDB.getSurfers()) {
+<div class="container manageBody">
+    @form(routes.Application.postSurfer(), 'class -> "form-horizontal") {
+    
+   <!-- Name -->
+  @text(surferForm("name"),
+        label = "Name",
+        placeholder = "Surfer's Name",
+        help = "")
+
+   <!-- Home -->
+  @text(surferForm("home"),
+        label = "Home",
+        placeholder = "Surfer's Home",
+        help = "")
+             
+    
+   <!-- Awards -->
+  @text(surferForm("awards"),
+        label = "Awards",
+        placeholder = "Awards (optional)",
+        help = "")
+        
+   <!-- Carousel URL -->
+  @text(surferForm("carouselURL"),
+        label = "Carousel Image URL",
+        placeholder = "Carousel Image URL",
+        help = "")  
+    
+   <!-- Bio URL -->
+  @text(surferForm("bioURL"),
+        label = "Biography URL",
+        placeholder = "Biography URL",
+        help = "")
+
+   <!-- Biography -->
+  @bootstrap3.textarea(surferForm("bio"),
+        rows = "10",
+        label = "Biography",
+        placeholder = "Surfer Biography",
+        help = "")
+
+   <!-- Slug -->
+  @text(surferForm("slug"),
+        label = "Slug",
+        placeholder = "Surfer Slug",
+        help = "")
+      
+  <!-- Type -->
+  @bootstrap3.select(surferForm("type"),
+          label = "Type",
+          optionMap = typeMap,
+          isMultiple = false,
+          help = "")    
+                                     
+    <button type="submit" class="btn btn-default col-sm-offset-2 col-sm-2">Submit</button>
+     }
+</div> 
+}

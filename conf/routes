@@ -3,13 +3,16 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                          controllers.Application.index()
+GET     /new                       controllers.Application.newSurfer()
+POST    /post                      controllers.Application.postSurfer()
+GET     /surfer/:slug               controllers.Application.getSurfer(slug)
 GET     /ho                        controllers.Application.ho()
-GET     /manuel                        controllers.Application.manuel()
-GET     /devault                        controllers.Application.devault()
-GET     /joyce                      controllers.Application.joyce()
-GET     /kelia                      controllers.Application.kelia()
-GET     /kolohe                      controllers.Application.kolohe()
+GET     /manuel                    controllers.Application.manuel()
+GET     /devault                   controllers.Application.devault()
+GET     /joyce                     controllers.Application.joyce()
+GET     /kelia                     controllers.Application.kelia()
+GET     /kolohe                    controllers.Application.kolohe()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

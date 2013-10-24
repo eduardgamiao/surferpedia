@@ -37,6 +37,10 @@ public class SurferDB {
   public static List<Surfer> getSurfers() {
     return new ArrayList<Surfer>(surfers.values());
   }
+  
+  public static Surfer getSurfer(String slug) {
+    return surfers.get(slug);
+  }
 
   /**
    * Add slug if does not exist.

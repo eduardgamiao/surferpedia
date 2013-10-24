@@ -1,3 +1,7 @@
+.manageBody {
+	padding-bottom: 50px;
+}
+
 .header {
 	background-image: url('../images/header.jpg');
 	height: 200px;

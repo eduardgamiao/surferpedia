@@ -1,0 +1,18 @@
+@(slug: String)
+
+@Main("Michael Ho",  SurferDB.getSurfers()) {
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="well">
+        <div class="ho"></div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="well">
+        <h3>@SurferDB.getSurfer(slug).getName()</h3>
+        <p>@SurferDB.getSurfer(slug).getBio() </div>
+    </div>
+  </div>
+</div>
+}

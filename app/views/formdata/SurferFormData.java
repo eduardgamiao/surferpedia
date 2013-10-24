@@ -115,7 +115,7 @@ public class SurferFormData {
       errors.add(new ValidationError("slug", "Slug needs to be alphanumeric."));      
     }
     if (!SurferTypes.isType(type)) {
-      errors.add(new ValidationError("type", "Surfer type \"" + type + "\" is not valid."));        
+      errors.add(new ValidationError("type", "Type is required."));        
     }
     
     return errors.isEmpty() ? null : errors;

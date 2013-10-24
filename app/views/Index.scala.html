@@ -1,3 +1,5 @@
+@(surfers: List[Surfer])
+
 @Main("Surferpedia") {
 <div class="container">
   <div id="carousel-example-generic" class="carousel slide">
@@ -59,5 +61,12 @@
     </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="icon-next"></span>
     </a>
   </div>
+</div>
+
+<div class="container">
+      @for(Surfer <- surfers) {
+      
+      <p>@Surfer.getName</p>
+      }
 </div>
 }

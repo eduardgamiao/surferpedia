@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import play.data.validation.ValidationError;
 import models.Surfer;
+import models.SurferDB;
 
 /**
  * Handles data from the Surfer form.
@@ -36,8 +37,6 @@ public class SurferFormData {
   /** Surfer type. */
   public String type;
   
-  private static List<String> slugs = new ArrayList<String>();
-  
   /**
    * Blank constructor.
    */
@@ -66,7 +65,7 @@ public class SurferFormData {
     this.bio = bio;
     this.slug = slug;
     this.type = type;
-    slugs.add(this.slug);
+    SurferDB.addSlug(slug);
   }
   
   /**
@@ -82,7 +81,7 @@ public class SurferFormData {
     this.bio = surfer.getBio();
     this.slug = surfer.getSlug();
     this.type = surfer.getType();
-    slugs.add(this.slug);
+    
   }
   
   /**
@@ -110,7 +109,7 @@ public class SurferFormData {
     if (slug == null || slug.length() == 0) {      
       errors.add(new ValidationError("slug", "Slug is required."));
     }
-    if (slugs.contains(slug)) {
+    if (SurferDB.ifSlugExist(slug)) {
       errors.add(new ValidationError("slug", "The slug \"" + slug + "\" already exists."));
     }
     if (!validateSlug(slug)) {

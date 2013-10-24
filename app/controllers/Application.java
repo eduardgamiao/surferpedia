@@ -1,7 +1,7 @@
 package controllers;
 
+import models.SurferDB;
 import play.mvc.Controller;
-
 import play.mvc.Result;
 import views.html.Index;
 import views.html.Ho;
@@ -21,7 +21,7 @@ public class Application extends Controller {
    * @return The resulting home page. 
    */
   public static Result index() {
-    return ok(Index.render());
+    return ok(Index.render(SurferDB.getSurfers()));
   }
   
   /**

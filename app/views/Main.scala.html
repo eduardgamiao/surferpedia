@@ -1,4 +1,4 @@
-@(page: String)(content: Html)
+@(page: String, surfers: List[Surfer])(content: Html)
 
 <!DOCTYPE html>
 
@@ -38,19 +38,17 @@
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Males<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="@routes.Application.ho()">Micheal Ho</a></li>
-              <li><a href="@routes.Application.kolohe()">Kolohe Andino</a></li>
+      @for(Surfer <- surfers) {
+      
+      <li><a href="/@Surfer.getName">@Surfer.getName</a></li>
+      }
             </ul>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Females<b
               class="caret"></b></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="@routes.Application.manuel()">Malia Manuel</a></li>
-              <li><a href="@routes.Application.joyce()">Joyce Hoffman</a></li>
-              <li><a href="@routes.Application.kelia()">Kelia Moniz</a></li>
             </ul></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Groms<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="@routes.Application.devault()">Imaikalani DeVault</a></li>
             </ul></li>
         </ul>
       </div>

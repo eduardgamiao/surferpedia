@@ -19,22 +19,15 @@ public class SurferDB {
    * @return The surfer.
    */
   public static Surfer addSurfer(SurferFormData formData) {
-    Surfer surfer;
-    if (slugs.contains(formData.slug)) {
-      surfer =
-          new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
-              formData.bio, formData.slug, formData.type);
-      surfers.put(surfer.getSlug(), surfer);
-      return surfer;
-    }
-    else {
+    Surfer surfer = null;
+    if (!slugs.contains(formData.slug)) {
       surfer =
           new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
               formData.bio, formData.slug, formData.type);
       surfers.put(surfer.getSlug(), surfer);
       slugs.add(surfer.getSlug());
-      return surfer;
     }
+    return surfer;
   }
   
   /**

@@ -65,7 +65,6 @@ public class SurferFormData {
     this.bio = bio;
     this.slug = slug;
     this.type = type;
-    SurferDB.addSlug(slug);
   }
   
   /**

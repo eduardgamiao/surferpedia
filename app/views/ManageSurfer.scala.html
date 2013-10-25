@@ -1,5 +1,6 @@
 @(surferForm: Form[views.formdata.SurferFormData],
-  typeMap: Map[String, Boolean])
+  typeMap: Map[String, Boolean],
+  disableSlug: Boolean)
 
 @import helper._
 @import bootstrap3._
@@ -47,9 +48,10 @@
         help = "")
 
    <!-- Slug -->
-  @text(surferForm("slug"),
+  @slug(surferForm("slug"),
         label = "Slug",
         placeholder = "Surfer Slug",
+        disableEdit = disableSlug,
         help = "")
       
   <!-- Type -->

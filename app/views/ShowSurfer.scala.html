@@ -1,6 +1,4 @@
-@(slug: String)
-
-@Main("Michael Ho",  SurferDB.getSurfers()) {
+@(slug: String) @Main("Michael Ho", SurferDB.getSurfers()) {
 <div class="container">
   <div class="row">
     <div class="col-md-4">
@@ -11,8 +9,20 @@
     <div class="col-md-8">
       <div class="well">
         <h3>@SurferDB.getSurfer(slug).getName()</h3>
-        <p>@SurferDB.getSurfer(slug).getBio() </div>
+        <p>@SurferDB.getSurfer(slug).getBio()
+        <div class="row">
+          <div class="col-md-4">
+            <a href="/surfer/@slug/edit"><button type="button" class="btn btn-primary">Edit</button></a>
+          </div>
+          <div class="col-md-offset-4 col-md-4">
+              <button style="float:right" type="button" class="btn btn-primary" input-align="right">Delete</button>
+          </div>
+        </div>
+      </div>
+
+
     </div>
+
   </div>
 </div>
 }

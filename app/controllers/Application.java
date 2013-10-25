@@ -38,11 +38,29 @@ public class Application extends Controller {
     SurferFormData data = new SurferFormData();
     Form<SurferFormData> formData = Form.form(SurferFormData.class).fill(data);
     Map<String, Boolean> typeMap = SurferTypes.getTypes(data.type);
-    return ok(ManageSurfer.render(formData, typeMap));
+    return ok(ManageSurfer.render(formData, typeMap, false));
   }
   
+  /**
+   * Get a Surfer from the database.
+   * @param slug The slug of the Surfer to retrieve.
+   * @return The Surfer with the matching slug.
+   */
   public static Result getSurfer(String slug) {
     return ok(ShowSurfer.render(slug));
+  }
+  
+  /**
+   * Edit a surfer.
+   * @param slug SLug of the Surfer to edit.
+   * @return A page to edit the Surfer.
+   */
+  public static Result manageSurfer(String slug) {
+    SurferFormData data = new SurferFormData(SurferDB.getSurfer(slug));
+    Form<SurferFormData> formData = Form.form(SurferFormData.class).fill(data);
+    Map<String, Boolean> typeMap = SurferTypes.getTypes(data.type);
+    SurferDB.removeSlug(data.slug);
+    return ok(ManageSurfer.render(formData, typeMap, true));   
   }
   
   /**
@@ -53,13 +71,13 @@ public class Application extends Controller {
     Form<SurferFormData> formData = Form.form(SurferFormData.class).bindFromRequest();
     if (formData.hasErrors()) {
       Map<String, Boolean> typeMap = SurferTypes.getTypes();
-      return badRequest(ManageSurfer.render(formData, typeMap));
+      return badRequest(ManageSurfer.render(formData, typeMap, false));
     }
     else {
       SurferFormData form = formData.get();
       SurferDB.addSurfer(form);    
       Map<String, Boolean> typeMap = SurferTypes.getTypes(form.type);
-      return ok(ManageSurfer.render(formData, typeMap));
+      return ok(ManageSurfer.render(formData, typeMap, true));
     }
   }
   

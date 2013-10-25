@@ -27,6 +27,12 @@ public class SurferDB {
       surfers.put(surfer.getSlug(), surfer);
       slugs.add(surfer.getSlug());
     }
+    else {
+        surfer =
+            new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
+                formData.bio, formData.slug, formData.type);  
+        surfers.put(surfer.getSlug(), surfer);
+    }
     return surfer;
   }
   
@@ -38,6 +44,11 @@ public class SurferDB {
     return new ArrayList<Surfer>(surfers.values());
   }
   
+  /**
+   * Get a Surfer.
+   * @param slug Slug of Surfer to get.
+   * @return The Surfer matching the specified slug.
+   */
   public static Surfer getSurfer(String slug) {
     return surfers.get(slug);
   }
@@ -61,5 +72,13 @@ public class SurferDB {
    */
   public static boolean ifSlugExist(String slug) {
     return slugs.contains(slug);
+  }
+  
+  /**
+   * Remove a slug.
+   * @param slug Slug to remove.
+   */
+  public static void removeSlug(String slug) {
+    slugs.remove(slug);
   }
 }

@@ -1,4 +1,9 @@
-@(slug: String) @Main(SurferDB.getSurfer(slug).getName(), SurferDB.getSurfers()) {
+@(slug: String) 
+
+@Main(SurferDB.getSurfer(slug).getName(), 
+      SurferDB.getMaleSurfers(),
+      SurferDB.getFemaleSurfers(),
+      SurferDB.getGromSurfers()) {
 <div class="container">
   <div class="row">
     <div class="col-md-4">

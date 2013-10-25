@@ -81,4 +81,46 @@ public class SurferDB {
   public static void removeSlug(String slug) {
     slugs.remove(slug);
   }
+  
+  /**
+   * Return a list of male Surfers.
+   * @return A list of male Surfers.
+   */
+  public static List<Surfer> getMaleSurfers() {
+    List<Surfer> maleSurfers = new ArrayList<Surfer>();
+    for (Surfer surfer : surfers.values()) {
+      if (surfer.getType().equals("Male")) {
+        maleSurfers.add(surfer);
+      }
+    }
+    return maleSurfers;
+  }
+  
+  /**
+   * Return a list of male Surfers.
+   * @return A list of male Surfers.
+   */
+  public static List<Surfer> getFemaleSurfers() {
+    List<Surfer> maleSurfers = new ArrayList<Surfer>();
+    for (Surfer surfer : surfers.values()) {
+      if (surfer.getType().equals("Female")) {
+        maleSurfers.add(surfer);
+      }
+    }
+    return maleSurfers;
+  }
+  
+  /**
+   * Return a list of male Surfers.
+   * @return A list of male Surfers.
+   */
+  public static List<Surfer> getGromSurfers() {
+    List<Surfer> maleSurfers = new ArrayList<Surfer>();
+    for (Surfer surfer : surfers.values()) {
+      if (surfer.getType().equals("Grom")) {
+        maleSurfers.add(surfer);
+      }
+    }
+    return maleSurfers;
+  }
 }

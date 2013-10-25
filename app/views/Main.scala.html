@@ -1,4 +1,4 @@
-@(page: String, surfers: List[Surfer])(content: Html)
+@(page: String, maleSurfers: List[Surfer])(content: Html)
 
 <!DOCTYPE html>
 
@@ -38,7 +38,7 @@
 
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Males<b class="caret"></b></a>
             <ul class="dropdown-menu" role="menu">
-              @for(Surfer <- surfers) {
+              @for(Surfer <- maleSurfers) {
               <li><a href="/surfer/@Surfer.getSlug">@Surfer.getName</a></li> }
             </ul>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Females<b

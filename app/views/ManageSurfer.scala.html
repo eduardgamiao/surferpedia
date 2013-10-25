@@ -5,7 +5,7 @@
 @import helper._
 @import bootstrap3._
 
-@Main("Manage Surfer", SurferDB.getSurfers()) {
+@Main("Manage Surfer", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(), SurferDB.getGromSurfers()) {
 <div class="container manageBody">
     @form(routes.Application.postSurfer(), 'class -> "form-horizontal") {
     

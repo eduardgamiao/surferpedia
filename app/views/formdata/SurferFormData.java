@@ -99,8 +99,14 @@ public class SurferFormData {
     if (carouselURL == null || carouselURL.length() == 0) {
       errors.add(new ValidationError("carouselURL", "Carousel URL is required."));      
     }
+    if (!((carouselURL.endsWith(".jpg") || (carouselURL.endsWith(".png")) || (carouselURL.endsWith(".gif")) ))) {
+      errors.add(new ValidationError("carouselURL", "URL needs to link to an image. (Supported Types: .jpg/.png/.gif."));         
+    }
     if (bioURL == null || bioURL.length() == 0) {
       errors.add(new ValidationError("bioURL", "Biography URL is required."));      
+    }
+    if (!((bioURL.endsWith(".jpg") || (bioURL.endsWith(".png")) || (bioURL.endsWith(".gif")) ))) {
+      errors.add(new ValidationError("bioURL", "URL needs to link to an image. (Supported Types: .jpg/.png/.gif."));         
     }
     if (bio == null || bio.length() == 0) {
       errors.add(new ValidationError("bio", "Biography is required."));

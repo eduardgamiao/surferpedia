@@ -15,6 +15,7 @@ public class SurferDB {
 
   /**
    * Add a Surfer.
+   * 
    * @param formData The data from the form.
    * @return The surfer.
    */
@@ -28,24 +29,26 @@ public class SurferDB {
       slugs.add(surfer.getSlug());
     }
     else {
-        surfer =
-            new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
-                formData.bio, formData.slug, formData.type);  
-        surfers.put(surfer.getSlug(), surfer);
+      surfer =
+          new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
+              formData.bio, formData.slug, formData.type);
+      surfers.put(surfer.getSlug(), surfer);
     }
     return surfer;
   }
-  
+
   /**
    * Return a list of Surfers.
+   * 
    * @return A list of Surfers.
    */
   public static List<Surfer> getSurfers() {
     return new ArrayList<Surfer>(surfers.values());
   }
-  
+
   /**
    * Get a Surfer.
+   * 
    * @param slug Slug of Surfer to get.
    * @return The Surfer matching the specified slug.
    */
@@ -73,17 +76,19 @@ public class SurferDB {
   public static boolean ifSlugExist(String slug) {
     return slugs.contains(slug);
   }
-  
+
   /**
    * Remove a slug.
+   * 
    * @param slug Slug to remove.
    */
   public static void removeSlug(String slug) {
     slugs.remove(slug);
   }
-  
+
   /**
    * Return a list of male Surfers.
+   * 
    * @return A list of male Surfers.
    */
   public static List<Surfer> getMaleSurfers() {
@@ -95,9 +100,10 @@ public class SurferDB {
     }
     return maleSurfers;
   }
-  
+
   /**
    * Return a list of male Surfers.
+   * 
    * @return A list of male Surfers.
    */
   public static List<Surfer> getFemaleSurfers() {
@@ -109,9 +115,10 @@ public class SurferDB {
     }
     return maleSurfers;
   }
-  
+
   /**
    * Return a list of male Surfers.
+   * 
    * @return A list of male Surfers.
    */
   public static List<Surfer> getGromSurfers() {
@@ -122,5 +129,26 @@ public class SurferDB {
       }
     }
     return maleSurfers;
+  }
+
+  /**
+   * Delete a Surfer from the database.
+   * 
+   * @param slug Slug of Surfer to delete.
+   */
+  public static void deleteSurfer(String slug) {
+    if (!(slugs.isEmpty() && surfers.isEmpty())) {
+      int index = 0;
+      for (String currentSlug : slugs) {
+        if (currentSlug.equals(slug)) {
+          break;
+        }
+        else {
+          index++;
+        }
+      }
+      surfers.remove(slug);
+      slugs.remove(index);
+    }
   }
 }

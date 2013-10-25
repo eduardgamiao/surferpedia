@@ -8,6 +8,7 @@ GET     /new                       controllers.Application.newSurfer()
 POST    /post                      controllers.Application.postSurfer()
 GET     /surfer/:slug              controllers.Application.getSurfer(slug)
 GET     /surfer/:slug/edit         controllers.Application.manageSurfer(slug)
+GET     /surfer/:slug/delete       controllers.Application.deleteSurfer(slug)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

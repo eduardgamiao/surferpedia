@@ -1,26 +1,27 @@
-@(slug: String) 
+@(slug: String) @Main(SurferDB.getSurfer(slug).getName(), SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
+SurferDB.getGromSurfers()) {
 
-@Main(SurferDB.getSurfer(slug).getName(), 
-      SurferDB.getMaleSurfers(),
-      SurferDB.getFemaleSurfers(),
-      SurferDB.getGromSurfers()) {
-<div class="container">
+<div class="container" style="padding-bottom:100px;">
   <div class="row">
     <div class="col-md-4">
-      <div class="well">
-        <img src="@SurferDB.getSurfer(slug).getBioURL()" style="height:100%; width:100%; background-size:cover; background-position:center;">
+      <div class="well" style="height:400px">
+        <img src="@SurferDB.getSurfer(slug).getBioURL()"
+          style="height: 100%; width: 100%; background-size: cover; background-position: center;">
       </div>
     </div>
     <div class="col-md-8">
       <div class="well">
         <h3>@SurferDB.getSurfer(slug).getName()</h3>
-        <p>@SurferDB.getSurfer(slug).getBio()
+        <p><b>Home Town:</b> @SurferDB.getSurfer(slug).getHome()</p>
+        <p><b>Awards:</b> @SurferDB.getSurfer(slug).getAwards()</p>
+        <p><b>Biography:</b> @SurferDB.getSurfer(slug).getBio()
         <div class="row">
           <div class="col-md-4">
             <a href="/surfer/@slug/edit"><button type="button" class="btn btn-primary">Edit</button></a>
           </div>
           <div class="col-md-offset-4 col-md-4">
-              <a href="/surfer/@slug/delete"><button style="float:right" type="button" class="btn btn-primary" input-align="right">Delete</button></a>
+            <a href="/surfer/@slug/delete"><button style="float: right" type="button" class="btn btn-primary"
+                input-align="right">Delete</button></a>
           </div>
         </div>
       </div>

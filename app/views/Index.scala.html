@@ -1,12 +1,16 @@
 @(surfers: List[Surfer]) @Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
 SurferDB.getGromSurfers()) {
-<div class="container">
+<div class="container" style="padding-bottom:100px;">
   <div id="carousel-example-generic" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      @for((surfer, index) <- surfers.zipWithIndex) {
+        @if(index == 0) {
+      <li data-target="#carousel-example-generic" data-slide-to="@index" class="active"></li>
+      } else {
+      <li data-target="#carousel-example-generic" data-slide-to="@index"></li>
+      }
+      }
     </ol>
 
     <!-- Wrapper for slides -->
@@ -16,6 +20,7 @@ SurferDB.getGromSurfers()) {
             <div class="item active">
               <div style="background-image: url('@surfer.getCarouselURL()'); 
                          height:400px;
+                         width: 100%;
                          background-repeat: none;
                          bacgrkound-position: center;
                          background-size: cover;"></div>
@@ -25,6 +30,7 @@ SurferDB.getGromSurfers()) {
             <div class="item">
               <div style="background-image: url('@surfer.getCarouselURL()'); 
                          height:400px;
+                         width: 100%;
                          background-repeat: none;
                          bacgrkound-position: center;
                          background-size: cover;"></div>

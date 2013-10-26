@@ -6,7 +6,7 @@ package models;
 public class Surfer {
   private String name;
   private String home;
-  private String awards;
+  private String awards = "None";
   private String carouselURL;
   private String bioURL;
   private String bio;
@@ -28,7 +28,9 @@ public class Surfer {
                 String slug, String type) {
     this.name = name;
     this.home = home;
-    this.awards = awards;
+    if (awards != null) {
+      this.awards = awards;
+    }
     this.carouselURL = carouselURL;
     this.bioURL = bioURL;
     this.bio = bio;

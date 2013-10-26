@@ -37,7 +37,7 @@ public class Global extends GlobalSettings {
             "Michael Ho",
             "Hawaii",
             null,
-            "http://cdn2.coresites.mpora.com/surfeurope_new/wp-content/uploads/2013/09/Michael-Ho.jpg",
+            "http://i34.photobucket.com/albums/d138/lilanus/026a3401.jpg",
             "http://www.surfline.com/surfaz/images/ho_michael/1chang_mho_winner.jpg",
             "The most consistent performer of the past three decades on the heaviest stretch of surf in the world "
             + "happens to be one of the smallest. At a mere 5\'5\" and 135 pounds, Michael Ho personally proved size "

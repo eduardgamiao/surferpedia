@@ -1,21 +1,24 @@
-![screenshot](https://raw.github.com/eduardgamiao/surferpedia/master/doc/surferpedia_example.png)
+![screenshot](https://raw.github.com/eduardgamiao/surferpedia/tree/dynamic/doc/main_example.png)
+![screenshot](https://raw.github.com/eduardgamiao/surferpedia/tree/dynamic/doc/show_example.png)
+![screenshot](https://raw.github.com/eduardgamiao/surferpedia/tree/dynamic/doc/form_example.png)
 
-<h2>Overview</h2>
+<h2>Dynamic Surferpedia</h3>
+
+<h3>Overview</h3>
 
 A web application that serves as an editable Wiki for Surfers. Supports creation, read, update and delete 
 functions.
 
-Installation
+<h3>Installation</h3>
 
 Download the .zip file and extract. Change to the extracted directory and invoke the play run command. Once Play 
 Framework is running, visit the url localhost:9000 in a web browser.
 
-For
+<h3>Usage</h3>
 
-Usage
+The application features a simple navigation system via a navigation-bar. Surfer's are divided by their type (Male, 
+Female and Grom) and can be viewed by selecting a Surfer's name from the drop-down menu on the navigation-bar.
 
-Use navbar to navigate the different pages.
+<h3>Credits</h3>
 
-Credits
-
-Eduard Gamiao and ICS314 Fall 2013 class.
+Eduard Gamiao with help from the ICS 314 at University of Hawaii at Manoa.

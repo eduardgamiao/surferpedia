@@ -22,8 +22,8 @@ public class Global extends GlobalSettings {
             "Malia Manuel",
             "Hawaii",
             null,
-            "http://cdn.surf.transworld.net/wp-content/blogs.dir/443/files/malia-manuel-10-hottest-girls-in-pro-surfing"
-            + "/Malia%20Manuel5.jpg",
+            "http://cdn3.coresites.mpora.com/cooler_new/wp-content/uploads/2013/03/"
+            + "Screen-Shot-2013-03-05-at-11.06.28.jpg",
             "http://b.vimeocdn.com/ps/369/581/3695817_300.jpg",
             "Malia Manuel hasn't been a surfer for that long. Let's be honest, surfer Malia Manuel hasn't been a kid "
             + "for too long. At 14, Malia is the new Women's Honda U.S. Open of Surfing presented by O'Neill champion."
@@ -37,7 +37,7 @@ public class Global extends GlobalSettings {
             "Michael Ho",
             "Hawaii",
             null,
-            "http://i34.photobucket.com/albums/d138/lilanus/026a3401.jpg",
+            "http://www.lat34.com/wp-content/uploads/2009/12/1208_Servais-HIRES-10_Michael-Ho_Andy-Irons_Peter-Mel.jpg",
             "http://www.surfline.com/surfaz/images/ho_michael/1chang_mho_winner.jpg",
             "The most consistent performer of the past three decades on the heaviest stretch of surf in the world "
             + "happens to be one of the smallest. At a mere 5\'5\" and 135 pounds, Michael Ho personally proved size "

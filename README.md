@@ -1,6 +1,6 @@
-![screenshot](https://raw.github.com/eduardgamiao/surferpedia/tree/dynamic/doc/main_example.png)
-![screenshot](https://raw.github.com/eduardgamiao/surferpedia/tree/dynamic/doc/show_example.png)
-![screenshot](https://raw.github.com/eduardgamiao/surferpedia/tree/dynamic/doc/form_example.png)
+![screenshot](https://raw.github.com/eduardgamiao/surferpedia/dynamic/doc/main_example.png)
+![screenshot](https://raw.github.com/eduardgamiao/surferpedia/dynamic/doc/show_example.png)
+![screenshot](https://raw.github.com/eduardgamiao/surferpedia/dynamic/doc/form_example.png)
 
 <h2>Dynamic Surferpedia</h3>
 

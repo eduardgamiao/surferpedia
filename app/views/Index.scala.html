@@ -1,61 +1,38 @@
-@(surfers: List[Surfer])
-
-@Main("Surferpedia",  SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(), SurferDB.getGromSurfers()) {
+@(surfers: List[Surfer]) @Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
+SurferDB.getGromSurfers()) {
 <div class="container">
   <div id="carousel-example-generic" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <div class="ho"></div>
-        <div class="carousel-caption">
-          <h3>Micheal Ho</h3>
-        </div>
-      </div>
-      <div class="item">
-        <div class="malia"></div>
-        <div class="carousel-caption">
-          <h3>Malia Manuel</h3>
-        </div>
-      </div>
-      <div class="item">
-        <div class="devault"></div>
-        <div class="carousel-caption">
-          <h3>Imaikalani DeVault</h3>
-        </div>
-      </div>
-      <div class="item">
-        <div class="joyce"></div>
-        <div class="carousel-caption">
-          <h3>Joyce Hoffman</h3>
-        </div>
-      </div>
-      <div class="item">
-        <div class="kelia"></div>
-        <div class="carousel-caption">
-          <h3>Kelia Moniz</h3>
-        </div>
-      </div>
-      <div class="item">
-        <div class="kolohe-andino"></div>
-        <div class="carousel-caption">
-          <h3>Kolohe Andino</h3>
-        </div>
-      </div>
-
-
-
-    </div>
-
+    <div class="carousel-inner" style="background-color:white;">
+      @for((surfer, index) <- surfers.zipWithIndex) { 
+      @if(index == 0) {
+            <div class="item active">
+              <div style="background-image: url('@surfer.getCarouselURL()'); 
+                         height:400px;
+                         background-repeat: none;
+                         bacgrkound-position: center;
+                         background-size: cover;"></div>
+              <div class="carousel-caption"><h3>@surfer.getName()</h3></div>
+            </div>
+      } else {
+            <div class="item">
+              <div style="background-image: url('@surfer.getCarouselURL()'); 
+                         height:400px;
+                         background-repeat: none;
+                         bacgrkound-position: center;
+                         background-size: cover;"></div>
+              <div class="carousel-caption"><h3>@surfer.getName()</h3></div>
+            </div>    
+      }
+    }
+</div>
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="icon-prev"></span>
     </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="icon-next"></span>

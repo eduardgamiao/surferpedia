@@ -15,37 +15,38 @@ public class SurferFormData {
 
   /** Surfer name. */
   public String name;
-  
+
   /** Surfer home. */
   public String home;
-  
+
   /** Surfer awards. */
   public String awards;
-  
+
   /** Carousel URL. */
   public String carouselURL;
-  
+
   /** Bio URL. */
   public String bioURL;
-  
+
   /** Biography. */
   public String bio;
-  
+
   /** Surfer slug. */
   public String slug;
-  
+
   /** Surfer type. */
   public String type;
-  
+
   /**
    * Blank constructor.
    */
   public SurferFormData() {
-    
+
   }
-  
+
   /**
    * SurferFormData constructor.
+   * 
    * @param name Surfer name.
    * @param home Surfer home.
    * @param awards Surfer awards.
@@ -55,8 +56,8 @@ public class SurferFormData {
    * @param slug Slug identifier.
    * @param type Type of surfer (i.e. Male, Female or Grom).
    */
-  public SurferFormData(String name, String home, String awards, String carouselURL, String bioURL, String bio, 
-                String slug, String type) {
+  public SurferFormData(String name, String home, String awards, String carouselURL, String bioURL, String bio,
+      String slug, String type) {
     this.name = name;
     this.home = home;
     this.awards = awards;
@@ -66,9 +67,10 @@ public class SurferFormData {
     this.slug = slug;
     this.type = type;
   }
-  
+
   /**
    * SurferFormData constructor.
+   * 
    * @param surfer Surfer to be stored in database.
    */
   public SurferFormData(Surfer surfer) {
@@ -80,16 +82,17 @@ public class SurferFormData {
     this.bio = surfer.getBio();
     this.slug = surfer.getSlug();
     this.type = surfer.getType();
-    
+
   }
-  
+
   /**
    * Provides import validation of SuferFormData.
+   * 
    * @return A list of errors. The list can be null if no errors are found.
    */
   public List<ValidationError> validate() {
     ArrayList<ValidationError> errors = new ArrayList<ValidationError>();
-    
+
     if (name == null || name.length() == 0) {
       errors.add(new ValidationError("name", "Name is required."));
     }
@@ -97,38 +100,40 @@ public class SurferFormData {
       errors.add(new ValidationError("home", "Name is required."));
     }
     if (carouselURL == null || carouselURL.length() == 0) {
-      errors.add(new ValidationError("carouselURL", "Carousel URL is required."));      
+      errors.add(new ValidationError("carouselURL", "Carousel URL is required."));
     }
-    if (!((carouselURL.endsWith(".jpg") || (carouselURL.endsWith(".png")) || (carouselURL.endsWith(".gif")) ))) {
-      errors.add(new ValidationError("carouselURL", "URL needs to link to an image. (Supported Types: .jpg/.png/.gif."));         
+    if (!((carouselURL.endsWith(".jpg") || (carouselURL.endsWith(".png")) || (carouselURL.endsWith(".gif"))))) {
+      errors
+          .add(new ValidationError("carouselURL", "URL needs to link to an image. (Supported Types: .jpg/.png/.gif."));
     }
     if (bioURL == null || bioURL.length() == 0) {
-      errors.add(new ValidationError("bioURL", "Biography URL is required."));      
+      errors.add(new ValidationError("bioURL", "Biography URL is required."));
     }
-    if (!((bioURL.endsWith(".jpg") || (bioURL.endsWith(".png")) || (bioURL.endsWith(".gif")) ))) {
-      errors.add(new ValidationError("bioURL", "URL needs to link to an image. (Supported Types: .jpg/.png/.gif."));         
+    if (!((bioURL.endsWith(".jpg") || (bioURL.endsWith(".png")) || (bioURL.endsWith(".gif"))))) {
+      errors.add(new ValidationError("bioURL", "URL needs to link to an image. (Supported Types: .jpg/.png/.gif."));
     }
     if (bio == null || bio.length() == 0) {
       errors.add(new ValidationError("bio", "Biography is required."));
     }
-    if (slug == null || slug.length() == 0) {      
+    if (slug == null || slug.length() == 0) {
       errors.add(new ValidationError("slug", "Slug is required."));
     }
     if (SurferDB.ifSlugExist(slug)) {
       errors.add(new ValidationError("slug", "The slug \"" + slug + "\" already exists."));
     }
     if (!validateSlug(slug)) {
-      errors.add(new ValidationError("slug", "Slug needs to be alphanumeric."));      
+      errors.add(new ValidationError("slug", "Slug needs to be alphanumeric."));
     }
     if (!SurferTypes.isType(type)) {
-      errors.add(new ValidationError("type", "Type is required."));        
+      errors.add(new ValidationError("type", "Type is required."));
     }
-    
+
     return errors.isEmpty() ? null : errors;
   }
-  
+
   /**
    * Checks if a slug is alphanumeric.
+   * 
    * @param slugToCheck The slug to check.
    * @return True if the slug is alphanumeric, false otherwise.
    */

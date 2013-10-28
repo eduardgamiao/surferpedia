@@ -60,4 +60,5 @@ public class Global extends GlobalSettings {
             + " for him, he's got Volcom's esteemed coach, Dave Riddle, in his corner lighting the path ahead.",
             "imaikalanidevault", "Grom"));
   }
+  
 }

@@ -1,7 +1,10 @@
 package controllers;
 
 import java.util.Map;
+import models.Surfer;
 import models.SurferDB;
+import models.Update;
+import models.UpdateDB;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -10,6 +13,7 @@ import views.formdata.SurferTypes;
 import views.html.Index;
 import views.html.ManageSurfer;
 import views.html.ShowSurfer;
+import views.html.ChangeLog;
 
 /**
  * Implements the controllers for this application.
@@ -45,7 +49,7 @@ public class Application extends Controller {
    */
   public static Result getSurfer(String slug) {
     if (SurferDB.ifSlugExist(slug)) {
-    return ok(ShowSurfer.render(slug));
+      return ok(ShowSurfer.render(slug));
     }
     else {
       return badRequest(Index.render(SurferDB.getSurfers()));
@@ -60,6 +64,8 @@ public class Application extends Controller {
    */
   public static Result manageSurfer(String slug) {
     if (SurferDB.ifSlugExist(slug)) {
+      Surfer surfer = SurferDB.getSurfer(slug);
+      UpdateDB.addUpdate(new Update("Edit", surfer.getName()));
       SurferFormData data = new SurferFormData(SurferDB.getSurfer(slug));
       Form<SurferFormData> formData = Form.form(SurferFormData.class).fill(data);
       Map<String, Boolean> typeMap = SurferTypes.getTypes(data.type);
@@ -67,7 +73,7 @@ public class Application extends Controller {
       return ok(ManageSurfer.render(formData, typeMap, true));
     }
     else {
-       return badRequest(Index.render(SurferDB.getSurfers()));
+      return badRequest(Index.render(SurferDB.getSurfers()));
     }
   }
 
@@ -85,6 +91,8 @@ public class Application extends Controller {
     else {
       SurferFormData form = formData.get();
       SurferDB.addSurfer(form);
+      Surfer surfer = SurferDB.getSurfer(form.slug);
+      UpdateDB.addUpdate(new Update("Add", surfer.getName()));
       Map<String, Boolean> typeMap = SurferTypes.getTypes(form.type);
       return ok(ManageSurfer.render(formData, typeMap, true));
     }
@@ -97,7 +105,17 @@ public class Application extends Controller {
    * @return The index page.
    */
   public static Result deleteSurfer(String slug) {
+    Surfer surfer = SurferDB.getSurfer(slug);
+    UpdateDB.addUpdate(new Update("Delete", surfer.getName()));
     SurferDB.deleteSurfer(slug);
     return ok(Index.render(SurferDB.getSurfers()));
+  }
+  
+  /**
+   * Render the change log for the database.
+   * @return A page of updates.
+   */
+  public static Result changeLog() {
+    return ok(ChangeLog.render(UpdateDB.getUpdates()));
   }
 }

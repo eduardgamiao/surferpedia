@@ -1,9 +1,7 @@
 package controllers;
 
 import java.util.Map;
-import models.Surfer;
 import models.SurferDB;
-import models.Update;
 import models.UpdateDB;
 import play.data.Form;
 import play.mvc.Controller;
@@ -58,14 +56,11 @@ public class Application extends Controller {
 
   /**
    * Edit a surfer.
-   * 
    * @param slug SLug of the Surfer to edit.
    * @return A page to edit the Surfer.
    */
   public static Result manageSurfer(String slug) {
     if (SurferDB.ifSlugExist(slug)) {
-      Surfer surfer = SurferDB.getSurfer(slug);
-      UpdateDB.addUpdate(new Update("Edit", surfer.getName()));
       SurferFormData data = new SurferFormData(SurferDB.getSurfer(slug));
       Form<SurferFormData> formData = Form.form(SurferFormData.class).fill(data);
       Map<String, Boolean> typeMap = SurferTypes.getTypes(data.type);
@@ -91,8 +86,6 @@ public class Application extends Controller {
     else {
       SurferFormData form = formData.get();
       SurferDB.addSurfer(form);
-      Surfer surfer = SurferDB.getSurfer(form.slug);
-      UpdateDB.addUpdate(new Update("Add", surfer.getName()));
       Map<String, Boolean> typeMap = SurferTypes.getTypes(form.type);
       return ok(ManageSurfer.render(formData, typeMap, true));
     }
@@ -105,8 +98,6 @@ public class Application extends Controller {
    * @return The index page.
    */
   public static Result deleteSurfer(String slug) {
-    Surfer surfer = SurferDB.getSurfer(slug);
-    UpdateDB.addUpdate(new Update("Delete", surfer.getName()));
     SurferDB.deleteSurfer(slug);
     return ok(Index.render(SurferDB.getSurfers()));
   }

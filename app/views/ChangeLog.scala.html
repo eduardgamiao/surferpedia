@@ -1,10 +1,13 @@
 @(updates: List[Update]) @Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
 SurferDB.getGromSurfers()) {
 <div class="container" style="padding-bottom: 100px;">
-  <table>
-    <th>Date</th>
-    <th>Change Type</th>
-    <th>Target</th> 
+  <h2>Change Log</h2>
+  <table class="table table-bordered">
+    <tr>
+      <th>Date</th>
+      <th>Change Type</th>
+      <th>Target</th>
+    </tr> 
       @for(update <- updates) { 
         <tr>
           <td>@update.getDate()</td>          

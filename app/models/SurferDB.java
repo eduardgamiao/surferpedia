@@ -20,20 +20,17 @@ public class SurferDB {
    * @return The surfer.
    */
   public static Surfer addSurfer(SurferFormData formData) {
-    Surfer surfer = null;
-    if (!slugs.contains(formData.slug)) {
-      surfer =
-          new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
-              formData.bio, formData.slug, formData.type);
-      surfers.put(surfer.getSlug(), surfer);
-      slugs.add(surfer.getSlug());
+    Surfer surfer =
+        new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL, formData.bio,
+            formData.slug, formData.type);
+    if (surfers.containsKey(surfer.getSlug())) {
+      UpdateDB.addUpdate(new Update("Edit", surfer.getName()));
     }
     else {
-      surfer =
-          new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL,
-              formData.bio, formData.slug, formData.type);
-      surfers.put(surfer.getSlug(), surfer);
+      UpdateDB.addUpdate(new Update("New", surfer.getName()));
     }
+    surfers.put(surfer.getSlug(), surfer);
+    slugs.add(surfer.getSlug());
     return surfer;
   }
 
@@ -147,8 +144,27 @@ public class SurferDB {
           index++;
         }
       }
+      Surfer surfer = getSurfer(slug);
+      UpdateDB.addUpdate(new Update("Delete", surfer.getName()));
       surfers.remove(slug);
       slugs.remove(index);
     }
+  }
+
+  /**
+   * Check if a Surfer exists.
+   * 
+   * @param slug Slug of surfer.
+   * @return True if the Surfer exists, false otherwise.
+   */
+  public static boolean doesSurferExist(String slug) {
+    List<Surfer> surferList = getSurfers();
+    Surfer surferToCheck = getSurfer(slug);
+    for (Surfer surfer : surferList) {
+      if (surferToCheck.equals(surfer)) {
+        return false;
+      }
+    }
+    return true;
   }
 }

@@ -31,7 +31,7 @@ public class Global extends GlobalSettings {
             + "O'Neill in Huntington Beach and took top prize winning with a two-wave score of 14.34 points. Malia "
             + "was surprised by her string of upsets and overall victory since it was her first open and her first ever"
             + " 2-person surfing heat.",
-            "maliamanuel", "Female"));
+            "maliamanuel", "Female", "Regular"));
     SurferDB
         .addSurfer(new SurferFormData(
             "Michael Ho",
@@ -44,7 +44,7 @@ public class Global extends GlobalSettings {
             + "to be of little importance when it comes to bravery on the North Shore. His expertise was not limited "
             + "to big surf, as he became a highly successful and feared competitor in all conditions, finishing in the "
             + "ASP Top 16 for 10 consecutive seasons.",
-            "michaelho", "Male"));
+            "michaelho", "Male", "Goofy"));
     SurferDB
         .addSurfer(new SurferFormData(
             "Imaikalani DeVault",
@@ -58,7 +58,7 @@ public class Global extends GlobalSettings {
             + "is downright buttery. Although he's had some solid results in the past, for Imaikalani to further his "
             + "career to the next level, he'll need to make another hard push on the contest scene next year. Lucky"
             + " for him, he's got Volcom's esteemed coach, Dave Riddle, in his corner lighting the path ahead.",
-            "imaikalanidevault", "Grom"));
+            "imaikalanidevault", "Grom", "Regular"));
   }
   
 }

@@ -22,7 +22,7 @@ public class SurferDB {
   public static Surfer addSurfer(SurferFormData formData) {
     Surfer surfer =
         new Surfer(formData.name, formData.home, formData.awards, formData.carouselURL, formData.bioURL, formData.bio,
-            formData.slug, formData.type);
+            formData.slug, formData.type, formData.footStyle);
     if (surfers.containsKey(surfer.getSlug())) {
       UpdateDB.addUpdate(new Update("Edit", surfer.getName()));
     }

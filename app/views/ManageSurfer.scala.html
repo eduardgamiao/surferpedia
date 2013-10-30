@@ -1,6 +1,7 @@
 @(surferForm: Form[views.formdata.SurferFormData],
   typeMap: Map[String, Boolean],
-  disableSlug: Boolean)
+  disableSlug: Boolean,
+  styles: List[String])
 
 @import helper._
 @import bootstrap3._
@@ -26,6 +27,12 @@
   @text(surferForm("awards"),
         label = "Awards",
         placeholder = "Awards (optional)",
+        help = "")
+        
+   <!-- Grade Level -->
+  @radiobuttons(surferForm("footStyle"),
+        label = "Level",
+        buttonNameList = styles,
         help = "")
         
    <!-- Carousel URL -->

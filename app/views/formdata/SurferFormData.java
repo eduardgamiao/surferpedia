@@ -36,6 +36,9 @@ public class SurferFormData {
 
   /** Surfer type. */
   public String type;
+  
+  /** Footstyle. */
+  public String footStyle;
 
   /**
    * Blank constructor.
@@ -55,9 +58,10 @@ public class SurferFormData {
    * @param bio Biography.
    * @param slug Slug identifier.
    * @param type Type of surfer (i.e. Male, Female or Grom).
+   * @param footStyle Surfer's foot style.
    */
   public SurferFormData(String name, String home, String awards, String carouselURL, String bioURL, String bio,
-      String slug, String type) {
+      String slug, String type, String footStyle) {
     this.name = name;
     this.home = home;
     this.awards = awards;
@@ -66,6 +70,7 @@ public class SurferFormData {
     this.bio = bio;
     this.slug = slug;
     this.type = type;
+    this.footStyle = footStyle;
   }
 
   /**
@@ -82,6 +87,7 @@ public class SurferFormData {
     this.bio = surfer.getBio();
     this.slug = surfer.getSlug();
     this.type = surfer.getType();
+    this.footStyle = surfer.getFootStyle();
 
   }
 
@@ -127,6 +133,10 @@ public class SurferFormData {
     if (!SurferTypes.isType(type)) {
       errors.add(new ValidationError("type", "Type is required."));
     }
+    if (footStyle == null || footStyle.length() == 0) {
+      errors.add(new ValidationError("footStyle", "Foot Style is Required."));
+    }
+      
 
     return errors.isEmpty() ? null : errors;
   }

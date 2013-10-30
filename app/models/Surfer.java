@@ -12,6 +12,7 @@ public class Surfer {
   private String bio;
   private String slug;
   private String type;
+  private String footStyle;
   
   /**
    * Surfer constructor.
@@ -23,9 +24,10 @@ public class Surfer {
    * @param bio Biography.
    * @param slug Slug identifier.
    * @param type Type of surfer (i.e. Male, Female or Grom).
+   * @param footStyle Surfer's foot style.
    */
   public Surfer(String name, String home, String awards, String carouselURL, String bioURL, String bio, 
-                String slug, String type) {
+                String slug, String type, String footStyle) {
     this.name = name;
     this.home = home;
     if (awards != null) {
@@ -36,6 +38,7 @@ public class Surfer {
     this.bio = bio;
     this.slug = slug;
     this.type = type;
+    this.footStyle = footStyle;
   }
   
   
@@ -134,6 +137,22 @@ public class Surfer {
    */
   public void setType(String type) {
     this.type = type;
+  }
+
+
+  /**
+   * @return the footStyle
+   */
+  public String getFootStyle() {
+    return footStyle;
+  }
+
+
+  /**
+   * @param footStyle the footStyle to set
+   */
+  public void setFootStyle(String footStyle) {
+    this.footStyle = footStyle;
   }
 
 }

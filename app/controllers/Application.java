@@ -87,7 +87,8 @@ public class Application extends Controller {
     Form<SurferFormData> formData = Form.form(SurferFormData.class).bindFromRequest();
     if (formData.hasErrors()) {
       Map<String, Boolean> typeMap = SurferTypes.getTypes();
-      return badRequest(ManageSurfer.render(formData, typeMap, false, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+      return badRequest(ManageSurfer.render(formData, typeMap, false, 
+          Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
     else {
       SurferFormData form = formData.get();

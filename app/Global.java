@@ -2,6 +2,7 @@ import models.SurferDB;
 import models.UserInfoDB;
 import play.Application;
 import play.GlobalSettings;
+import play.Play;
 import views.formdata.SurferFormData;
 
 /**
@@ -18,8 +19,12 @@ public class Global extends GlobalSettings {
    * @param app An application.
    */
   public void onStart(Application app) {
-    UserInfoDB.addUserInfo("Admin", "admin@example.com", "password");
+    String adminEmail = Play.application().configuration().getString("admin.email");
+    String adminPassword = Play.application().configuration().getString("admin.password");    
     
+    UserInfoDB.defineAdmin("Admin", adminEmail, adminPassword);
+    
+    if (UserInfoDB.adminDefined()) {
     SurferDB
         .addSurfer(new SurferFormData(
             "Malia Manuel",
@@ -62,6 +67,7 @@ public class Global extends GlobalSettings {
             + "career to the next level, he'll need to make another hard push on the contest scene next year. Lucky"
             + " for him, he's got Volcom's esteemed coach, Dave Riddle, in his corner lighting the path ahead.",
             "imaikalanidevault", "Grom"));
+    }
   }
   
 }

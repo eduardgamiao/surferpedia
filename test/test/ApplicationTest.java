@@ -31,7 +31,7 @@ public class ApplicationTest {
   @Test
   public void renderTemplate() {
     ArrayList<Surfer> list = new ArrayList<Surfer>();
-    Content html = views.html.Index.render(list);
+    Content html = views.html.Index.render(list, false, null);
     assertThat(contentType(html)).isEqualTo("text/html");
     assertThat(contentAsString(html)).contains("home page");
   }

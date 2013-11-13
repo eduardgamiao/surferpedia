@@ -1,5 +1,7 @@
-@(updates: List[Update]) @Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
-SurferDB.getGromSurfers()) {
+@(updates: List[Update], isLoggedIn: Boolean, userInfo: UserInfo) 
+
+@Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
+SurferDB.getGromSurfers(), isLoggedIn, userInfo) {
 <div class="container" style="padding-bottom: 100px;">
   <h2>Change Log</h2>
   <table class="table table-bordered">

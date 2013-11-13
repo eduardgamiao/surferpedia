@@ -1,5 +1,7 @@
-@(slug: String) @Main(SurferDB.getSurfer(slug).getName(), SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
-SurferDB.getGromSurfers()) {
+@(slug: String, isLoggedIn: Boolean, userInfo: UserInfo) 
+
+@Main(SurferDB.getSurfer(slug).getName(), SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
+SurferDB.getGromSurfers(), isLoggedIn, userInfo) {
 
 <div class="container" style="padding-bottom: 100px;">
   <div class="row">
@@ -20,6 +22,7 @@ SurferDB.getGromSurfers()) {
         </p>
         <p>
           <b>Biography:</b> @SurferDB.getSurfer(slug).getBio()
+          @if(isLoggedIn) {
         <div class="row">
           <div class="col-md-4">
             <a href="/surfer/@slug/edit"><button type="button" class="btn btn-primary">Edit</button></a>
@@ -52,6 +55,7 @@ SurferDB.getGromSurfers()) {
             <!-- /.modal -->
           </div>
         </div>
+        }
       </div>
 
 

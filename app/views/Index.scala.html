@@ -1,5 +1,7 @@
-@(surfers: List[Surfer]) @Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
-SurferDB.getGromSurfers()) {
+@(surfers: List[Surfer], isLoggedIn: Boolean, userInfo: UserInfo) 
+
+@Main("Surferpedia", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(),
+SurferDB.getGromSurfers(), isLoggedIn, userInfo) {
 <div class="container" style="padding-bottom:100px;">
   <div id="carousel-example-generic" class="carousel slide">
     <!-- Indicators -->

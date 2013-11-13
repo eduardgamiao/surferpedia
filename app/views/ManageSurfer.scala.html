@@ -1,11 +1,10 @@
-@(surferForm: Form[views.formdata.SurferFormData],
-  typeMap: Map[String, Boolean],
-  disableSlug: Boolean)
+@(surferForm: Form[views.formdata.SurferFormData], 
+typeMap: Map[String, Boolean], disableSlug: Boolean, isLoggedIn: Boolean, userInfo: UserInfo)
 
 @import helper._
 @import bootstrap3._
 
-@Main("Manage Surfer", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(), SurferDB.getGromSurfers()) {
+@Main("Manage Surfer", SurferDB.getMaleSurfers(), SurferDB.getFemaleSurfers(), SurferDB.getGromSurfers(), isLoggedIn, userInfo) {
 <div class="container manageBody">
     @form(routes.Application.postSurfer(), 'class -> "form-horizontal") {
     

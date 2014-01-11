@@ -1,8 +1,10 @@
 package test;
 
 import org.junit.Test;
+import controllers.Secured;
 import play.test.TestBrowser;
 import play.libs.F.Callback;
+import test.pages.IndexPage;
 import static play.test.Helpers.HTMLUNIT;
 import static play.test.Helpers.inMemoryDatabase;
 import static play.test.Helpers.fakeApplication;
@@ -25,10 +27,22 @@ public class IntegrationTest {
     running(testServer(PORT, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
       public void invoke(TestBrowser browser) {
         browser.goTo("http://localhost:3333");
-        assertThat(browser.pageSource()).contains("home page");
-
-        browser.goTo("http://localhost:3333/page1");
-        assertThat(browser.pageSource()).contains("Page1");
+        assertThat(browser.pageSource()).contains("Surferpedia");
+      }
+    });
+  }
+  
+  /**
+   * Check to see that the two pages can be displayed.
+   */
+  @Test
+  public void testIndex() {
+    running(testServer(PORT, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
+      public void invoke(TestBrowser browser) {
+        IndexPage indexPage = new IndexPage(browser.getDriver(), PORT);
+        browser.goTo(indexPage);
+        indexPage.isAt();
+        indexPage.goToLogin();
       }
     });
   }
